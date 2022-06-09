@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to zzZ
         </h1>
-
+        <img height="128px" width="128px" src="https://img2.finalfantasyxiv.com/c/S72_e05652dbe3ba6748157c03c6bd54d4a5_02_128x128.png"></img>
 
 
         

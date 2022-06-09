@@ -9,7 +9,7 @@ export default function Navbar(){
     <a className="btn btn-warning" href="../gallery"><span className="material-symbols-outlined">photo_library</span></a>
   </li>
   <li className="nav-item">
-    <a className="btn btn-warning" href="../members"><span className="material-symbols-outlined">groups</span></a>
+    <a className="btn btn-warning" href="../about"><span className="material-symbols-outlined">diversity_3</span></a>
   </li>
   <li className="nav-item">
     <a className="btn btn-danger " href="../events"><span className="material-symbols-outlined">calendar_month</span></a>
