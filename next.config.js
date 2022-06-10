@@ -1,5 +1,8 @@
 const withPWA = require("next-pwa");
 const XIVAPI = require('@xivapi/js');
+const { REST } = require('@discordjs/rest');
+const { Routes } = require('discord-api-types/v10');
+const { Client, GatewayIntentBits } = require('discord.js');
 /** @type {import('next').NextConfig} */
 
 

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import fsPromises from 'fs/promises';
 import path from 'path'
+import Head from 'next/head';
 import Link from 'next/link';
 export async function getServerSideProps  (context){
     const filePath = path.join(process.cwd(),'public/fc-data.json');
@@ -10,17 +11,30 @@ export async function getServerSideProps  (context){
 }
 function members({data }){
     data.FreeCompanyMembers.forEach(element => {
-        element.ID = 'https://eu.finalfantasyxiv.com/lodestone/character/'+element.ID+'/'
+        element.ID = 'https://eu.finalfantasyxiv.com/lodestone/character/'+element.ID
     });
     const pagintate=(array,pagesize,pagenumber)=>{
         return array.slice((pagenumber-1)*pagesize,pagenumber*pagesize);
     }
-    const firstpage = pagintate(data.FreeCompanyMembers,10,1)
     
+    const firstrowseeker = pagintate(data.FreeCompany.Focus,3,1)
+    const secondrowseeker = pagintate(data.FreeCompany.Focus,3,2)
+    const thirdrowseeker = pagintate(data.FreeCompany.Focus,3,3)
+
     return (
-        <div className="container p-5 bg-light">
+
+        <div className="container p-5 bg-dark">
+                    <Head>
+                    <title>About zzZ Fc</title>
+                    </Head>
  <table className="table table-dark table-striped  ">
-       
+       <thead>
+           <tr>
+               <td className='text-center'>Housing</td>
+               <td className='text-center'>FC Name</td>
+
+           </tr>
+       </thead>
         <tbody>
         <tr>
         <td className="text-center">{data.FreeCompany.Estate.Plot}</td>
@@ -63,12 +77,12 @@ function members({data }){
         <table className="table table-dark table-striped  ">
         <thead>
         <tr>
-        {data.FreeCompany.Seeking.map(seek=><td key={seek.Name} className="text-center">{seek.Name}</td>)}
+        {firstrowseeker.map(seek=><td key={seek.Name} className="text-center">{seek.Name}</td>)}
 </tr>
 </thead>
 <tbody>
     <tr>
-    {data.FreeCompany.Seeking.map(seek=><td key={seek.Name} className="text-center"><Image alt=' ' width='50px' height='50px'  src={seek.Icon}></Image></td>)}
+    {firstrowseeker.map(seek=><td key={seek.Name} className="text-center"><Image alt=' ' width='50px' height='50px'  src={seek.Icon}></Image></td>)}
 
     </tr>
 </tbody>
@@ -76,12 +90,40 @@ function members({data }){
 <table className="table table-dark table-striped  ">
         <thead>
         <tr>
-        {data.FreeCompany.Focus.map(seek=><td key={seek.Name} className="text-center">{seek.Name}</td>)}
+        {secondrowseeker.map(seek=><td key={seek.Name} className="text-center">{seek.Name}</td>)}
 </tr>
 </thead>
 <tbody>
     <tr>
-    {data.FreeCompany.Focus.map(seek=><td key={seek.Name} className="text-center"><Image alt='' width='50px' height='50px' src={seek.Icon}></Image></td>)}
+    {secondrowseeker.map(seek=><td key={seek.Name} className="text-center"><Image alt=' ' width='50px' height='50px'  src={seek.Icon}></Image></td>)}
+
+    </tr>
+</tbody>
+</table>
+
+<table className="table table-dark table-striped  ">
+        <thead>
+        <tr>
+        {thirdrowseeker.map(seek=><td key={seek.Name} className="text-center">{seek.Name}</td>)}
+</tr>
+</thead>
+<tbody>
+    <tr>
+    {thirdrowseeker.map(seek=><td key={seek.Name} className="text-center"><Image alt=' ' width={32} height={32}  src={seek.Icon}></Image></td>)}
+
+    </tr>
+</tbody>
+</table>
+
+<table className="table table-dark table-striped  ">
+        <thead>
+        <tr>
+        {data.FreeCompany.Seeking.map(seek=><td key={seek.Name} className="text-center">{seek.Name}</td>)}
+</tr>
+</thead>
+<tbody>
+    <tr>
+    {data.FreeCompany.Seeking.map(seek=><td key={seek.Name} className="text-center"><Image alt='' width={32} height={32} src={seek.Icon}></Image></td>)}
     </tr>
 </tbody>
 </table>
@@ -95,7 +137,7 @@ function members({data }){
         </tr>
     </thead>
     <tbody>
-{firstpage.map(memeber=>
+{data.FreeCompanyMembers.map(memeber=>
 <tr key={memeber.Name} >
 <td className='text-center'><a href={memeber.ID}><Image alt='' width={64} height={64} src={memeber.Avatar}></Image></a></td>
 <td className='text-center'>{memeber.Name}</td>
