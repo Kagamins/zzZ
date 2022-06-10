@@ -3,7 +3,7 @@ export default function MiniGames(){
     return(
 
     
-    <form className=" bg-light ">
+    <form >
         <Head>
         <title>zzZ Fc</title>
         </Head>

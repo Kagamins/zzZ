@@ -23,7 +23,7 @@ function members({data }){
 
     return (
 
-        <div className="container p-5 bg-dark">
+        <div className='container p-5'>
                     <Head>
                     <title>About zzZ Fc</title>
                     </Head>
