@@ -30,3 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+# service worker pwa
+sw.js
+sw.js.map
