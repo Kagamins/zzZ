@@ -12,7 +12,8 @@ export async function getStaticProps(context){
 export default function Gallery(data){
     const picmap = Object.values(data.data).reverse();
     console.log(picmap)
-    return(
+
+  return(
     <div className='container p-5 '>
             <Head>
         <title>zzZ Fc</title>
