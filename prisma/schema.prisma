@@ -1,23 +1,21 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
-model Picture{
-  id Int @id @default(autoincrement())
-  link String @unique 
+
+model Picture {
+  id   Int    @id @default(autoincrement())
+  link String @unique
 }
-model Event{
-  id Int @id @default(autoincrement())
-  name String
-  due_date Int 
+
+model Event {
+  id          Int    @id @default(autoincrement())
+  name        String
   description String
-  image String
-  special String @unique
+  image       String
+  special     String @unique
 }
