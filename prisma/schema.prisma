@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = "mysql://rogtki71zxg7:pscale_pw_NZU7nzmeL34Iw8ASikExr1h0hT6gO8zbOwc37ukEYPo@01mc0bf5dk5e.eu-central-1.psdb.cloud/zzz?sslaccept=strict"
 }
 
 model Picture {
