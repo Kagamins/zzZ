@@ -10,7 +10,8 @@ export async function getStaticProps(context){
 
 }
 export default function Gallery(data){ 
-    return(
+  data = data.data.reverse();   
+  return(
     <div className='container p-5 '>
             <Head>
         <title>zzZ Fc</title>
