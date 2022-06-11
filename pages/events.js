@@ -11,7 +11,9 @@ export async function getServerSideProps(context) {
 
 }
 export default function Events(data) {
-    return (<>
+    const events = Object.values(data.data).reverse();
+
+   return (<>
         <Head>
         <title > zzZ Fc </title> </Head> 
         <h1 className = {styles.title}> Event Listing < span className = "material-symbols-outlined lg" > calendar_month </span></h1 >
@@ -30,7 +32,7 @@ export default function Events(data) {
                 </tr>
             </thead>
             <tbody>
-                {data.data.map(event=><tr key={event.special}><td>{event.name}</td><td>{event.description}</td><td>{event.due_date}</td></tr>)}
+                {events.map(event=><tr key={event.special}><td>{event.name}</td><td>{event.description}</td><td>{event.due_date}</td></tr>)}
 
             </tbody>
         </table>

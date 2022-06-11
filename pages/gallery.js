@@ -9,7 +9,9 @@ export async function getStaticProps(context){
  return { props : {data} }
 
 }
-export default function Gallery(data){ 
+export default function Gallery(data){
+    const picmap = Object.values(data.data).reverse();
+    console.log(picmap)
     return(
     <div className='container p-5 '>
             <Head>
@@ -19,7 +21,7 @@ export default function Gallery(data){
     
 
     <div className="row">
-  {data.data.map(d=><div className='col-md-auto' key={d.id} ><Image className='d-block w-100'  src={d.link} width={1920} height={1080}  alt=''></Image></div>)}
+  {picmap.map(d=><div className='col-md-auto' key={d.id} ><Image className='d-block w-100'  src={d.link} width={1920} height={1080}  alt=''></Image></div>)}
   </div>
 
     </div>
