@@ -1,0 +1,59 @@
+<ref *1> Message {
+    channelId: '763166630778896395',
+    guildId: '74526559620308992',
+    id: '984893272449249280',
+    createdTimestamp: 1654887254584,
+    type: 'DEFAULT',
+    system: false,
+    content: '',
+    author: User {
+      id: '140681344601686016',
+      bot: false,
+      system: false,
+      flags: UserFlags { bitfield: 512 },
+      username: 'Kagami Senpai',
+      discriminator: '4052',
+      avatar: '9cdabcc84a429384a4801680b7370a09',
+      banner: undefined,
+      accentColor: undefined
+    },
+    pinned: false,
+    tts: false,
+    nonce: null,
+    embeds: [],
+    components: [],
+    attachments: Collection(1) [Map] {
+      '984893271258054726' => MessageAttachment {
+        attachment: 'https://cdn.discordapp.com/attachments/763166630778896395/984893271258054726/2022-06-04_04-45-52-376_Neneko_Autumn2_Snowflakes.png',
+        name: '2022-06-04_04-45-52-376_Neneko_Autumn2_Snowflakes.png',
+        id: '984893271258054726',
+        size: 2640761,
+        url: 'https://cdn.discordapp.com/attachments/763166630778896395/984893271258054726/2022-06-04_04-45-52-376_Neneko_Autumn2_Snowflakes.png',
+        proxyURL: 'https://media.discordapp.net/attachments/763166630778896395/984893271258054726/2022-06-04_04-45-52-376_Neneko_Autumn2_Snowflakes.png',
+        height: 1080,
+        width: 1920,
+        contentType: 'image/png',
+        description: null,
+        ephemeral: false
+      }
+    },
+    stickers: Collection(0) [Map] {},
+    editedTimestamp: null,
+    reactions: ReactionManager { message: [Circular *1] },
+    mentions: MessageMentions {
+      everyone: false,
+      users: Collection(0) [Map] {},
+      roles: Collection(0) [Map] {},
+      _members: null,
+      _channels: null,
+      crosspostedChannels: Collection(0) [Map] {},
+      repliedUser: null
+    },
+    webhookId: null,
+    groupActivityApplication: null,
+    applicationId: null,
+    activity: null,
+    flags: MessageFlags { bitfield: 0 },
+    reference: null,
+    interaction: null
+  }
