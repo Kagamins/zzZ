@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Head from 'next/head';
+import styles from '../styles/Home.module.css'
 export async function getServerSideProps  (context){
    
     const jsondata = await fetch('https://xivapi.com/freecompany/9237023573225242696');
@@ -7,6 +8,9 @@ export async function getServerSideProps  (context){
     return ({ props : { data } })
 }
 function members({data }){
+
+    
+    
 
     const pagintate=(array,pagesize,pagenumber)=>{
         return array.slice((pagenumber-1)*pagesize,pagenumber*pagesize);
@@ -18,20 +22,22 @@ function members({data }){
 
     return (
 
-        <div className='container p-5'>
+        <div className={styles.container}>
                     <Head>
                     <title>About zzZ Fc</title>
                     </Head>
+                    <main className="mb-3 p-5">
  <table className="table table-dark table-striped table-hover  ">
        <thead>
            <tr>
-               <td className='text-center'>Housing</td>
-               <td className='text-center'>FC Name</td>
-
+                <td className='text-center'>Free Company Name</td>
+                <td className='text-center'><span className="material-symbols-outlined">home</span></td>
+                <td className='text-center'><span className="material-symbols-outlined">home</span></td>
            </tr>
        </thead>
         <tbody>
         <tr>
+        <td className="text-center">{data.FreeCompany.Name}</td>
         <td className="text-center">{data.FreeCompany.Estate.Plot}</td>
         <td className="text-center">{data.FreeCompany.Estate.Name}</td>
         </tr>
@@ -43,20 +49,34 @@ function members({data }){
             <tr>
                 <th className="text-center">Active Members </th>
                 <th className="text-center">Rank</th>
-                <th className="text-center">Monthly</th>
-                <th className="text-center">Weekly</th>
             </tr>
         </thead>
         <tbody>
         <tr>
         <td className="text-center">{data.FreeCompany.ActiveMemberCount}</td>
         <td className="text-center">{data.FreeCompany.Rank}</td>
+
+        </tr>
+        </tbody>
+        </table>
+        <table className="table table-dark table-striped table-hover ">
+        <thead>
+            <tr>
+
+                <th className="text-center">Monthly Standing</th>
+                <th className="text-center">Weekly Standing</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+
         <td className="text-center">{data.FreeCompany.Ranking.Monthly}</td>
         <td className="text-center">{data.FreeCompany.Ranking.Weekly}</td>
         </tr>
         </tbody>
         </table>
-       
+
+
         <table  className="table table-dark table-striped table-hover  ">
         <thead>
             <tr>
@@ -110,7 +130,7 @@ function members({data }){
 </tbody>
 </table>
 
-<table className="table table-dark table-striped  ">
+<table className="table table-dark table-striped table-hover    ">
         <thead>
         <tr>
         {data.FreeCompany.Seeking.map(seek=><td key={seek.Name} className="text-center">{seek.Name}</td>)}
@@ -122,7 +142,7 @@ function members({data }){
     </tr>
 </tbody>
 </table>
-
+</main>
         </div>
     )
 }

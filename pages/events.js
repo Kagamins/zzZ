@@ -2,9 +2,8 @@ import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import {PrismaClient} from '@prisma/client'
 export async function getServerSideProps(context) {
-   const prisma = new PrismaClient()
-    const data = await prisma.Event.findMany()
-
+const prisma = new PrismaClient()
+const data = await prisma.Event.findMany()
     return {
         props: {data}
     }
@@ -12,7 +11,6 @@ export async function getServerSideProps(context) {
 }
 export default function Events(data) {
     const events = Object.values(data.data).reverse();
-
    return (<>
         <Head>
         <title > zzZ Fc </title> </Head> 
@@ -26,13 +24,11 @@ export default function Events(data) {
                     <td>
                     Description
                     </td>
-                    <td>
-                    TimeStamp
-                    </td>
+                   
                 </tr>
             </thead>
             <tbody>
-                {events.map(event=><tr key={event.special}><td>{event.name}</td><td>{event.description}</td><td>{event.due_date}</td></tr>)}
+                {events.map(event=><tr key={event.special}><td>{event.name}</td><td>{event.description}</td></tr>)}
 
             </tbody>
         </table>
