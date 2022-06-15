@@ -13,8 +13,8 @@ export async function getServerSideProps  (context){
     return ({ props : { data } })
 }
 function members({data }){
-    const [collapseOpen, setCollapseOpen] = useState(false);
-    const [collapseOpenSeek, setCollapseOpenSeek] = useState(false);
+    const [collapseOpen, setCollapseOpen] = UseState(false);
+    const [collapseOpenSeek, setCollapseOpenSeek] = UseState(false);
 
     
     
