@@ -43,11 +43,12 @@ function members({data }){
                 <Col><span className="material-symbols-outlined">home</span></Col>
            </Row>
         
-        <div className=" row mt-4 p-5 bg-success text-white rounded ">
+        <Row>
         <Col>{data.FreeCompany.Name}</Col>
         <Col>{data.FreeCompany.Estate.Plot}</Col>
         <Col>{data.FreeCompany.Estate.Name}</Col>
-        </div>
+        </Row>
+        
         </div>
         <div className='row gap-2'>
         <div className=" col mt-4 p-5 bg-light text-black rounded ">

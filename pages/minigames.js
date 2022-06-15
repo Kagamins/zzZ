@@ -49,7 +49,7 @@ export default function MiniGames(){
         <Head>
         <title>zzZ Fc</title>
         </Head>
-        <main className="mb-3 p-5">
+        <main className="mb-3 p-15">
         <form className="d-grid gap-3" onSubmit={handleSubmit}>
             <div className="d-grid gap-2">
                 
