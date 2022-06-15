@@ -80,9 +80,10 @@ function members({data }){
         
         </div>
         </div>
-    <Row>
+    
     <Col>
-        <Card  className=" row mt-4 p-5 bg-dark  rounded  ">
+    <Card  className=" row mt-4 p-5 bg-dark  rounded  ">
+
         <Button
           color="primary"
           href="#Reputation"
@@ -91,19 +92,16 @@ function members({data }){
           }}
         >Reputation</Button>
 
-        
-            <Collapse isOpen={collapseOpen} aria-labelledby="Rep" id="Reputation">
+        </Card>
+            <Collapse isOpen={collapseOpen} aria-labelledby="Rep" id="Reputation" className=" row mt-4 p-5 bg-primary text-white  rounded  ">
 
-                    <CardBody className=" row mt-4 p-5 bg-primary text-white  rounded  ">
 
                     <Row>
                     {data.FreeCompany.Reputation.map(rep=><Col xs="auto" key={rep.Name} className="col">{rep.Name}  :  {rep.Rank} </Col>)}
                     </Row>
 
-                    </CardBody>
 
             </Collapse>
-        </Card>
     </Col>
     <Col>
         <Card  className=" row mt-4 p-5 bg-dark  rounded  ">
@@ -114,11 +112,11 @@ function members({data }){
             setCollapseOpenSeek(!collapseOpenSeek);
           }}
         >Focus!!</Button>
+</Card>
 
         
             <Collapse isOpen={collapseOpenSeek} aria-labelledby="Rep" id="Seek">
 
-                    <CardBody>
         <div className=" row mt-4 p-5 bg-danger text-white rounded ">
 
 
@@ -141,11 +139,8 @@ function members({data }){
 
     </Row>
 </div>
-</CardBody>
 </Collapse>
-</Card>
 </Col>
-</Row>
 <h1 className='text-white text-center'> Seeking </h1>
 <div className=" row mt-4 p-5 bg-secondary text-white rounded    ">
         <Row>
