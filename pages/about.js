@@ -13,8 +13,10 @@ export async function getServerSideProps  (context){
     return ({ props : { data } })
 }
 function members({data }){
-    const [collapseOpen, setCollapseOpen] = UseState(false);
-    const [collapseOpenSeek, setCollapseOpenSeek] = UseState(false);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [collapseOpen, setCollapseOpen] = useState(false);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [collapseOpenSeek, setCollapseOpenSeek] = useState(false);
 
     
     
