@@ -2,14 +2,19 @@
     display: flex;
     flex: 1;
     padding: 2rem 0;
-    border-top: 1px solid #eaeaea;
+    border-top: 1px ;
     justify-content: center;
     align-items: center;
   }
   
   .footer a {
-    display: flex;
+    display: block;
     justify-content: center;
+    margin: 2rem;
+    padding:0.5rem 2rem 0.5rem 2rem;
     align-items: center;
-    flex-grow: 1;
+    flex-shrink: inherit;
+  }
+  .footer i {
+    font-size: xx-large;
   }

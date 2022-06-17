@@ -15,7 +15,8 @@ export default function Events(data) {
         <Head>
         <title > zzZ Fc </title> </Head> 
         <h1 className = {styles.title}> Event Listing < span className = "material-symbols-outlined lg" > calendar_month </span></h1 >
-        <table className='table table-dark table-striped'>
+        <main className={styles.main}>
+        <table className='table table-dark table-striped table-hover p-5 mt-3'>
             <thead>
                 <tr>
                     <td>
@@ -32,5 +33,6 @@ export default function Events(data) {
 
             </tbody>
         </table>
+        </main>
         </>)
     }

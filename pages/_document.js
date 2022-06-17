@@ -9,6 +9,7 @@ export default function Document() {
         <link rel='apple-touch-icon' href='/icon-192x192.png' />
         <link rel='icon' type='image/png' sizes='192x192' href='/icon-192x192.png' />
         <meta name="description" content="zzZ FreeCompany " />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
           
           </Head>
       <body className=" bg-secondary">
