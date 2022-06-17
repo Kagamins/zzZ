@@ -5,9 +5,9 @@ import {PrismaClient} from '@prisma/client'
 import React, { Component } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-export async function getStaticProps(context){
+export async function getServerSideProps(context){
   const prisma  = new PrismaClient()
-  const data = await prisma.Picture.findMany().catch((e) => {throw e}).finally(async () => {await prisma.$disconnect()})
+  const data = await prisma.Picture.findMany().catch((e) => {throw e})
  return { props : {data} }
 
 }
@@ -23,7 +23,7 @@ export default function Gallery(data){
     
 
 
-    <Carousel className="carousel-inner">
+    <Carousel showThumbs={flase} className="carousel-inner">
 
   {picmap.map(d=><div  key={d.id} ><Image className='d-block w-100'  src={d.link} width={1920} height={1080}  alt=''></Image></div>)}
   </Carousel>
