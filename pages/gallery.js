@@ -23,7 +23,7 @@ export default function Gallery(data){
     
 
 
-    <Carousel showThumbs={flase} className="carousel-inner">
+    <Carousel showThumbs={false} className="carousel-inner">
 
   {picmap.map(d=><div  key={d.id} ><Image className='d-block w-100'  src={d.link} width={1920} height={1080}  alt=''></Image></div>)}
   </Carousel>
